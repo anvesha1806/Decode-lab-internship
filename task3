@@ -1,0 +1,43 @@
+# AI Recommendation System
+
+# Available items and their categories
+items = {
+    "Python Programming": ["coding", "technology", "python"],
+    "Machine Learning": ["ai", "technology", "data"],
+    "Digital Marketing": ["marketing", "business"],
+    "Graphic Design": ["design", "creativity"],
+    "Web Development": ["coding", "technology", "website"],
+    "Photography": ["camera", "creativity", "art"],
+    "Data Science": ["data", "technology", "analysis"]
+}
+
+# Take user interests
+user_input = input("Enter your interests (comma separated): ").lower()
+
+# Convert input into a list
+user_interests = [interest.strip() for interest in user_input.split(",")]
+
+# Find recommendations
+recommendations = []
+
+for item, tags in items.items():
+    score = 0
+
+    for interest in user_interests:
+        if interest in tags:
+            score += 1
+
+    if score > 0:
+        recommendations.append((item, score))
+
+# Sort by highest score
+recommendations.sort(key=lambda x: x[1], reverse=True)
+
+# Display results
+print("\nRecommended Items:")
+
+if recommendations:
+    for item, score in recommendations:
+        print(f"{item} (Match Score: {score})")
+else:
+    print("No recommendations found.")
