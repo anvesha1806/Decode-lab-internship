@@ -1,0 +1,59 @@
+# DecodeLabs AI Project 1
+# Rule-Based AI Chatbot
+
+from datetime import datetime
+
+print("=" * 50)
+print("🤖 Welcome to Rule-Based AI Chatbot")
+print("Type 'exit' to end the conversation")
+print("=" * 50)
+
+while True:
+    user_input = input("\nYou: ").lower().strip()
+
+    # Exit Condition
+    if user_input in ["exit", "bye", "quit"]:
+        print("Bot: Goodbye! Have a great day. 👋")
+        break
+
+    # Greetings
+    elif user_input in ["hi", "hello", "hey"]:
+        print("Bot: Hello! How can I help you today?")
+
+    # Asking Name
+    elif "your name" in user_input:
+        print("Bot: My name is DecodeBot, a Rule-Based AI Chatbot.")
+
+    # Asking About AI
+    elif "what is ai" in user_input:
+        print("Bot: AI stands for Artificial Intelligence. It enables machines to perform tasks that normally require human intelligence.")
+
+    # Asking Time
+    elif "time" in user_input:
+        current_time = datetime.now().strftime("%H:%M:%S")
+        print(f"Bot: Current time is {current_time}")
+
+    # Asking Date
+    elif "date" in user_input:
+        current_date = datetime.now().strftime("%d-%m-%Y")
+        print(f"Bot: Today's date is {current_date}")
+
+    # Asking About Internship
+    elif "internship" in user_input:
+        print("Bot: Internships help students gain practical experience and industry knowledge.")
+
+    # Asking About Python
+    elif "python" in user_input:
+        print("Bot: Python is a popular programming language used in AI, Data Science, and Web Development.")
+
+    # Asking How Are You
+    elif "how are you" in user_input:
+        print("Bot: I'm doing great! Thanks for asking. 😊")
+
+    # Thanks
+    elif "thank" in user_input:
+        print("Bot: You're welcome! Happy to help.")
+
+    # Unknown Input
+    else:
+        print("Bot: Sorry, I don't understand that. Please try another question.")
